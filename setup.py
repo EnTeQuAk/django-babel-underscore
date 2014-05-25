@@ -26,7 +26,8 @@ test_requires = [
 install_requires = [
     'Django>=1.4,<1.8',
     'Babel>=1.3',
-    'markey>=0.3',
+    'django-babel>=0.3.4',
+    'markey>=0.4',
 ]
 
 

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-import six
 from django.template import Lexer, TOKEN_TEXT
 from django.utils.encoding import force_text
 from django_babel.extract import extract_django
-from markey import handlebars
+from django.utils import six
+from markey import underscore
 from markey.tools import TokenStream
 from markey.machine import tokenize, parse_arguments
 
@@ -53,7 +53,7 @@ def extract(fileobj, keywords, comment_tags, options):
         for lineno, line in enumerate(fileobj, 1):
             funcname = None
 
-            stream = TokenStream.from_tuple_iter(tokenize(line, handlebars.rules))
+            stream = TokenStream.from_tuple_iter(tokenize(line, underscore.rules))
             while not stream.eof:
                 if stream.current.type == 'gettext_begin':
                     stream.expect('gettext_begin')

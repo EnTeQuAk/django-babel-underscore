@@ -64,6 +64,10 @@ setup(
         'tests': test_requires,
         'dev': dev_requires,
     },
+    entry_points="""
+    [babel.extractors]
+    underscore = django_babel_underscore:extract
+    """,
     zip_safe=False,
     license='BSD',
     keywords='django-babel-underscore',

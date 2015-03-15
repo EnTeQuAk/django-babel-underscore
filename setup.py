@@ -6,6 +6,8 @@ import codecs
 from setuptools import setup, find_packages
 from setuptools.command.test import test as TestCommand
 
+version = '0.3.0'
+
 
 def read(*parts):
     filename = os.path.join(os.path.dirname(__file__), *parts)
@@ -47,7 +49,7 @@ dev_requires = [
 
 setup(
     name='django-babel-underscore',
-    version='0.3.0',
+    version=version,
     description='Implements a underscore extractor for django-babel.',
     long_description=read('README.rst') + u'\n\n' + read('HISTORY.rst'),
     author='Christopher Grebs',

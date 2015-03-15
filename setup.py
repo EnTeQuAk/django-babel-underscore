@@ -35,7 +35,7 @@ test_requires = [
 install_requires = [
     'django>=1.4,<1.8',
     'babel>=1.3',
-    'django-babel>=0.3.4',
+    'django-babel>=0.3.9',
     'markey>=0.4',
 ]
 
@@ -58,7 +58,6 @@ setup(
     include_package_data=True,
     tests_require=test_requires,
     install_requires=install_requires,
-    cmdclass={'test': PyTest},
     extras_require={
         'docs': ['sphinx'],
         'tests': test_requires,

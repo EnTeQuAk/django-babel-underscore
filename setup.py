@@ -13,6 +13,15 @@ def read(*parts):
         return fp.read()
 
 
+if sys.argv[-1] == 'publish':
+    os.system('python setup.py sdist upload')
+    os.system('python setup.py bdist_wheel upload')
+    print('You probably want to also tag the version now:')
+    print('  git tag -a %s -m "version %s"' % (version, version))
+    print('  git push --tags')
+    sys.exit()
+
+
 test_requires = [
     'coverage',
     'pytest',
@@ -33,29 +42,12 @@ install_requires = [
 
 dev_requires = [
     'flake8>=2.0',
-    'invoke',
-    'twine'
 ]
-
-
-class PyTest(TestCommand):
-
-    def finalize_options(self):
-        TestCommand.finalize_options(self)
-        self.test_args = []
-        self.test_suite = True
-
-    def run_tests(self):
-        # import here, cause outside the eggs aren't loaded
-        import pytest
-        errno = pytest.main(self.test_args)
-        sys.exit(errno)
-
 
 
 setup(
     name='django-babel-underscore',
-    version='0.2.0',
+    version='0.3.0',
     description='Implements a underscore extractor for django-babel.',
     long_description=read('README.rst') + u'\n\n' + read('HISTORY.rst'),
     author='Christopher Grebs',

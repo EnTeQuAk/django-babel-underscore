@@ -3,6 +3,11 @@
 History
 -------
 
+0.3.0 (2015-03-15)
+------------------
+
+* Added `underscore` entry_point for babel.extractors (#1)
+
 0.2.0 (2014-12-24)
 ------------------
 

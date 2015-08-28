@@ -6,7 +6,7 @@ import codecs
 from setuptools import setup, find_packages
 from setuptools.command.test import test as TestCommand
 
-version = '0.4.1'
+version = '0.4.2'
 
 
 def read(*parts):
@@ -38,7 +38,7 @@ install_requires = [
     'django>=1.5,<2.0',
     'babel>=1.3',
     'django-babel>=0.3.9',
-    'markey>=0.4',
+    'markey>=0.7',
 ]
 
 

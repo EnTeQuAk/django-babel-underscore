@@ -1,5 +1,11 @@
 # -*- coding: utf-8 -*-
-from django.template import Lexer, TOKEN_TEXT
+import django
+
+if django.VERSION[:2] >= (1, 8):
+    from django.template.base import Lexer, TOKEN_TEXT
+else:
+    from django.template import Lexer, TOKEN_TEXT
+
 from django.utils.encoding import force_text
 from django_babel.extract import extract_django
 from django.utils import six

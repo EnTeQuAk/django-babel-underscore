@@ -8,7 +8,6 @@ else:
 
 from django.utils.encoding import force_text
 from django_babel.extract import extract_django
-from django.utils import six
 from markey import underscore
 from markey.tools import TokenStream
 from markey.machine import tokenize, parse_arguments
@@ -67,12 +66,8 @@ def extract(fileobj, keywords, comment_tags, options):
                     args, kwargs = parse_arguments(stream, 'gettext_end')
 
                     strings = []
-                    for arg in args:
-                        try:
-                            arg = int(arg)
-                        except ValueError:
-                            pass
-                        if isinstance(arg, six.string_types):
+                    for arg, argtype in args:
+                        if argtype == 'func_string_arg':
                             strings.append(force_text(arg))
                         else:
                             strings.append(None)

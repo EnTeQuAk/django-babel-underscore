@@ -38,7 +38,7 @@ install_requires = [
     'django>=1.5,<2.0',
     'babel>=1.3',
     'django-babel>=0.3.9',
-    'markey>=0.7',
+    'markey>=0.8',
 ]
 
 

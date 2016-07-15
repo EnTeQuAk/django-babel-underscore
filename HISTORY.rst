@@ -3,6 +3,14 @@
 History
 -------
 
+0.5.0 (2016-07-15)
+------------------
+
+* Remove support for Python 2.6 and Python 3.3
+* Remove support for Django < 1.8
+* Add support for Python 3.5
+* Add support for Django 1.9
+* Now requires markey 0.8
 
 0.4.2 (2015-08-28)
 ------------------

@@ -35,10 +35,10 @@ test_requires = [
 
 
 install_requires = [
-    'django>=1.5,<2.0',
+    'django>=1.8,<2.0',
     'babel>=1.3',
-    'django-babel>=0.3.9',
-    'markey>=0.8',
+    'django-babel>=0.5.1',
+    'markey>=0.8,<0.9',
 ]
 
 

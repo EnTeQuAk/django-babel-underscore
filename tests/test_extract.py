@@ -45,5 +45,5 @@ class TestMixedExtract:
     def test_extract_singular_form_kwargs(self):
         buf = BytesIO(b'<%= _("foo") %> <%= _() %> <%= ngettext("foo", "bar", count=42) %>')
         messages = list(extract(buf, self.keywords, [], {}))
-        assert messages == [(1, '_', u'foo', []), (1, '_', (), []), (1, 'ngettext', (u'foo', u'bar', None, u'count'), [])]  # noqa#
+        assert messages == [(1, '_', u'foo', []), (1, '_', (), []), (1, 'ngettext', (u'foo', u'bar', None, None), [])]  # noqa
 

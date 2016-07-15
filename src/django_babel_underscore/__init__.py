@@ -39,9 +39,13 @@ def extract(fileobj, keywords, comment_tags, options):
 
     text = fileobj.read().decode(encoding)
 
-    # TODO: There must be another way. Find a way to fix the ordering
-    # in babel directly!
-    vars = [token.token_type != TOKEN_TEXT for token in Lexer(text, None).tokenize()]
+    if django.VERSION[:2] >= (1, 9):
+        tokens = Lexer(text).tokenize()
+    else:
+        tokens = Lexer(text, None).tokenize()
+
+    vars = [token.token_type != TOKEN_TEXT for token in tokens]
+
     could_be_django = any(list(vars))
 
     if could_be_django:
@@ -66,6 +70,7 @@ def extract(fileobj, keywords, comment_tags, options):
                     args, kwargs = parse_arguments(stream, 'gettext_end')
 
                     strings = []
+
                     for arg, argtype in args:
                         if argtype == 'func_string_arg':
                             strings.append(force_text(arg))

@@ -1,7 +1,6 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 import pytest
 from babel._compat import BytesIO
-from babel.messages import extract
 
 from django_babel_underscore import extract
 
